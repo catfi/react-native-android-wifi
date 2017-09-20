@@ -221,6 +221,9 @@ public class AndroidWifiModule extends ReactContextBaseJavaModule {
 
 		// This value should be wrapped in double quotes, so we need to unwrap it.
 		String ssid = info.getSSID();
+		if (ssid == null) {
+			ssid = "";
+		}
 		if (ssid.startsWith("\"") && ssid.endsWith("\"")) {
 			ssid = ssid.substring(1, ssid.length() - 1);
 		}
